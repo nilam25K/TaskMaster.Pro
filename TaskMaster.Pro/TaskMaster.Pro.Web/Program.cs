@@ -1,4 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using TaskMaster.Pro.Application.Interfaces;
+using TaskMaster.Pro.Application.Services;
+using TaskMaster.Pro.Infrastructure.Data;
+using TaskMaster.Pro.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+builder.Services.AddScoped<ITaskRepository, TaskRepository>();  // You'll create this next
+builder.Services.AddScoped<TaskService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
