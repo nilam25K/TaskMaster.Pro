@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskMaster.Pro.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using TaskMaster.Pro.Infrastructure.Data;
 namespace TaskMaster.Pro.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260319135406_AddIdentity")]
+    partial class AddIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -175,9 +178,9 @@ namespace TaskMaster.Pro.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1c4e9548-9b1e-4b5a-9c2d-7e8f3a4b5c6d"),
+                            Id = new Guid("5b3b6b20-5318-4bac-904a-8377630deeed"),
                             Name = "Test Project 1",
-                            OwnerId = new Guid("1c4e9548-9b1e-4b5a-9c2d-7e8f3a4b5c6d")
+                            OwnerId = new Guid("6d8188f1-8a23-43fa-b804-6e7cbf204767")
                         });
                 });
 

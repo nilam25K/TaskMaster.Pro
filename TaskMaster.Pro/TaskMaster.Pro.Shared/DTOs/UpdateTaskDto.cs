@@ -8,13 +8,11 @@ using TaskStatus = TaskMaster.Pro.Shared.Enums.TaskStatus;
 
 namespace TaskMaster.Pro.Shared.DTOs
 {
-    public class CreateTaskDto
+    public class UpdateTaskDto
     {
         public string Title { get; set; } = string.Empty;
         public string? Description { get; set; }
         public TaskStatus Status { get; set; }
         public Priority Priority { get; set; }
-        public Guid AssigneeId { get; set; }
     }
-
 }

@@ -1,0 +1,24 @@
+﻿model IEnumerable<TaskMaster.Pro.Shared.Dtos.TaskDto>
+
+    <h2>Tasks</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Status</td>
+                    <td>@item.Priority</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>No tasks yet? Database is empty - normal for first run!</p>
